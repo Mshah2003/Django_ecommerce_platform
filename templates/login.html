@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Login{% endblock title %}
+
+{% block main-content %}
+<div class="container">
+    <div class="row my-3">
+        <div class="col-sm-6 offset-sm-3">
+            <h3>Login</h3>
+            <hr>
+            <form action="" method="post" novalidate class="shadow p-5">
+                {% csrf_token %}
+                {{form}}
+                <br>
+                <input type="submit" value="Submit" class="btn btn-primary">
+                <br>
+                <small><a href="#">Forgot password?</a></small><br><br>
+                <div class="text-center text-primary fw-bold"><small>New User? <a href="{% url 'register' %}" class="text-danger">Create new account</a></small></div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock main-content %}
